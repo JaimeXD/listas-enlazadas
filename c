@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 struct nodo
@@ -32,26 +31,58 @@ int crear(int n)
   }
   prev->next='\0';
   imprimir(head);
- /*eliminar un nodo*/
-  int key=2;
-  prev = head;
-  cur = head -> next; 
-  while (cur != '\0') 
-  {
-      if (cur->val == key)
-      {
-          prev -> next = cur -> next;
-          free(cur);
-          break;
-      }
-      prev = cur;
-      cur = cur -> next;
-  }
+
+}
+int eliminar(int a)
+{
+    struct nodo *prev,*head,*cur;
+    prev = head;
+    cur = head -> next;
+    while (cur != '\0')
+    {
+        if (cur->val == a)
+        {
+            prev -> next = cur -> next;
+            free(cur);
+            break;
+        }
+        prev = cur;
+        cur = cur -> next;
+    }
+    imprimir(head);
+}
+void insertarfirst(int n)
+{
+    struct nodo *t,*head,*prev,*cur;
+    t=malloc(sizeof(struct nodo));
+    t->val=n;
+    prev=t;
+    prev->next=head;
+    imprimir(head);
+    
+}
+void insertarmiddle(int n)
+{
+    struct nodo *a,*head,*prev,*cur;
+    a=malloc(sizeof(struct nodo));
+    a->val=n;
+}
+void insertorder(int n)
+{
+
+}
+void concatenate()
+{
+
 }
 
 main()
 {
-  int n=4;
-  crear(n);
-  
+  int n=6;
+  int a=crear(n);
+  printf("\n",a);
+  printf("\n",eliminar(4));
+  insertarfirst(9);
+
+
 }

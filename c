@@ -66,6 +66,10 @@ void insertarmiddle(int n)
     struct nodo *a,*head,*prev,*cur;
     a=malloc(sizeof(struct nodo));
     a->val=n;
+    int i,n;
+    for(i=0;head->next!='\0';++i)
+        n++;
+    
 }
 void insertorder(int n)
 {
@@ -73,7 +77,7 @@ void insertorder(int n)
 }
 void concatenate()
 {
-
+  
 }
 
 main()
